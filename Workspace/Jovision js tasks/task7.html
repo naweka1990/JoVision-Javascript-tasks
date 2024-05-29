@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    </head>
+    <body>
+        <div id = "p"></div>
+    </body>
+    <script>
+        function main()
+        {
+            let p = document.getElementById("p")
+            let H = 0, M = 0, S = 0;
+            setInterval
+            (function()
+            {
+                let time = new Date();
+                H = time.getHours();
+                M = time.getMinutes();
+                S = time.getSeconds();
+                if (H > 12)
+                {
+                    H -= 12;
+                }
+                p.innerHTML = H;
+                p.innerHTML += " : ";
+                p.innerHTML += M;
+                p.innerHTML += " : ";
+                p.innerHTML += S;
+            }
+            ,1000)
+        }
+        window.addEventListener("load",main,false);
+    </script>
+</html>
