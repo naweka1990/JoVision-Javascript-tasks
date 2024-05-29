@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    </head>
+    <body>
+        
+        <button id = "b1"> click me </button>
+        <div id="d1"></div>
+    </body>
+    <script>
+function main(){
+        let b1 = document.getElementById("b1");
+        
+        b1.addEventListener('click', Arr ,false );
+}
+function Arr (){
+    let d1=document.getElementById("d1");
+    let A = new Array(101);
+        let sum=0;
+
+        for (let i=0; i <= 100; i++){
+            A[i] = i;
+            sum += i;
+        }
+          d1.innerHTML+=sum;
+}        
+        window.addEventListener("load",main,false);
+    </script>
+</html>
