@@ -99,6 +99,11 @@
                 [A[i],A[j]] = [A[j],A[i]];
                 console.log(A[i]);
             }
+            A.sort((a, b) => b - a);
+            for (let i = 0; i <= 100; i++)
+            {
+                console.log(A[i]);
+            }
         },false)
         }
         window.addEventListener("load",main,false);
