@@ -3,15 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Task 9</title>
 
     </head>
     <body>
+        <button id = "b1"> Get ip </button>
     </body>
     <script>
         function main()
         {
-
+            let b1 = document.getElementById("b1");
+            b1.addEventListener("click",function(){
+                let L = fetch("https://api.ipify.org/").then((res)=>res.text()).then((res)=>console.log(res));
+            },false)
         }
         window.addEventListener("load",main,false);
     </script>
