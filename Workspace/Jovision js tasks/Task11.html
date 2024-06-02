@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 11</title>
+    </head>
+    <body>
+        <button id = "b1"> Get ip </button>
+        <div id = "p"></div>
+    </body>
+    <script>
+        function main()
+        {
+            let b1 = document.getElementById("b1");
+            let p = document.getElementById("p")
+            b1.addEventListener("click", async function()
+            {
+                try
+                {
+                const L = await fetch("https://api.ipify.org/");
+                if (L.Ok)
+                    {
+                        throw new Error(`an error has occurred: ${L.status}`);
+                    }
+                    const V = await L.text();
+                    b1.innerHTML = V;
+                }
+            catch (error){
+                console.log(error);
+                alert("an error has occurred");
+            }
+            }
+            ,false)
+        }
+        window.addEventListener("load",main,false);
+    </script>
+</html>
