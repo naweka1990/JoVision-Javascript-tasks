@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task 13</title>
+
+    </head>
+    <body>
+        <label>Name:</label>
+        <input type = "text" id = "name" placeholder = "Name">
+        <br><br>
+        <button id = "b1"> click me </button>
+    </body>
+    <script>
+        function main()
+        {
+            let b1 = document.getElementById("b1");
+            let name = document.getElementById("name");
+            b1.addEventListener("click", async function(){
+                name = name.value;
+                const w = await fetch(`https://api.agify.io?name=${name}`);
+                const d = await w.json();
+                const p = `your name is: ${name} \n your age is: ${d.age}`;
+                alert(p);
+            }, false);
+        }
+        window.addEventListener("load",main,false);
+    </script>
+</html>
